@@ -1,6 +1,7 @@
 # Lit Privacy SDKs
 
-This monorepo is used for the development of `lit-privacy-sdk`.
+This monorepo is used for the development of `lit-privacy-sdk`, developed in the context of this grant: 
+https://github.com/LIT-Protocol/LitGrants/issues/35
 
 ### Packages
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
