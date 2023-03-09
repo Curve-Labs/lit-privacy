@@ -1,5 +1,10 @@
-import { generateProofOfIdentity } from "../connectors/proofOfIdentity.js";
+import * as dotenv from "dotenv";
 import { ethers } from "ethers";
+import siwe from "siwe";
+import { generateProofOfIdentity } from "../connectors/proofOfIdentity.js";
+import { generateAuthSig } from "./helpers/auth.js";
+
+dotenv.config();
 
 const testAuthSig = {
   sig: "0x2bdede6164f56a601fc17a8a78327d28b54e87cf3fa20373fca1d73b804566736d76efe2dd79a4627870a50e66e1a9050ca333b6f98d9415d8bca424980611ca1c",
@@ -11,30 +16,23 @@ const testAuthSig = {
 
 describe("generateProofOfIdentity", () => {
   const provider = ethers.getDefaultProvider();
-  const testMemnonic =
-    "test test test test test test test test test test test junk";
-  const signer = ethers.Wallet.fromPhrase(testMemnonic, provider);
-  const message = "abc";
+  const signer = ethers.Wallet.fromPhrase(process.env.SEED_PHRASE, provider);
+  const domain = "localhost";
+  const origin = "https://localhost/login";
+  const statement =
+    "This is a test statement.  You can put anything you want here.";
 
-  let signature, authSig;
+  let signature, authSig, siweMessage;
 
   beforeAll(async () => {
-    signature = await signer.signMessage(message);
-    authSig = {
-      sig: signature,
-      derivedVia: "web3.eth.personal.sign",
-      signedMessage: message,
-      address: await signer.getAddress(),
-    };
-    console.log(authSig);
+    authSig = await generateAuthSig(signer, domain, origin, statement);
   });
 
   it("generates a proof of identity", async () => {
     const jsParams = {
       signature,
-      message,
     };
     const proof = await generateProofOfIdentity(authSig, jsParams);
-    console.log(authSig);
+    // console.log(authSig);
   });
 });

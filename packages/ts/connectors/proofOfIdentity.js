@@ -10,20 +10,6 @@ export const generateProofOfIdentity = async (authSig, jsParams) => {
     code: litActionCode,
     authSig,
     jsParams: {
-      conditions: [
-        {
-          conditionType: "evmBasic",
-          contractAddress: "",
-          standardContractType: "",
-          chain: "ethereum",
-          method: "eth_getBalance",
-          parameters: [":userAddress", "latest"],
-          returnValueTest: {
-            comparator: ">=",
-            value: "1",
-          },
-        },
-      ],
       authSig: {
         sig: "0x2bdede6164f56a601fc17a8a78327d28b54e87cf3fa20373fca1d73b804566736d76efe2dd79a4627870a50e66e1a9050ca333b6f98d9415d8bca424980611ca1c",
         derivedVia: "web3.eth.personal.sign",
