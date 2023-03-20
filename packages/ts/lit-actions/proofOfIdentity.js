@@ -1,23 +1,14 @@
 export default `
-const go = async () => {
-  // test an access control condition
-  // const testResult = await Lit.Actions.checkConditions({conditions, authSig, chain})
+  const generateProofOfIdentity = async () => {
+    const { message, signature, blockNumber, publicSignal } = fingerprint;
+    const address = await ethers.utils.verifyMessage(message, signature);
+    console.log(typeof blockNumber)
+    const parsedBlockNumber = ethers.utils.hexZeroPad(ethers.utils.hexlify(blockNumber), 32);
+    console.log(parsedBlockNumber);
+    const toSign = ethers.utils.concat([address, parsedBlockNumber, publicSignal]);
 
-  // console.log('testResult', testResult)
+    const sigShare = await LitActions.ethPersonalSignMessageEcdsa({ message: toSign, publicKey: "0x04845c2112794ebf3fad3dd884e0fa00c1192d0ab20c1846622cc97db5f1864c301248ca9a3c5945ebf4e8a26bd5f1ca69191da9a19d3a93a00582babff6b7667f", sigName: "sig1" });
+  };
 
-  // // only sign if the access condition is true
-  // if (!testResult){
-  //   return;
-  // }
-
-  // this is the string "Hello World" for testing
-  const toSign = [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100];
-  // this requests a signature share from the Lit Node
-  // the signature share will be automatically returned in the HTTP response from the node
-  const sigShare = await LitActions.signEcdsa({ toSign, publicKey: "0x047c98fc7448cf9e4009f3d9b2387e316e161b4594e211a6540f0c751496889eccb0ea456208dd0ff706b5a56407530d31de4eed87755e4dd65a07c314b28cec09", sigName: "sig1" });
-};
-
-
-
-go();
+  generateProofOfIdentity();
 `;
