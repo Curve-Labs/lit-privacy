@@ -3,58 +3,77 @@ import { ethers } from "ethers";
 import { generateProofOfIdentity } from "../connectors/proofOfIdentity.js";
 import { generateAuthSig } from "./helpers/auth.js";
 import { expect } from "@jest/globals";
+import { recoverAddress } from "@ethersproject/transactions";
+import { joinSignature } from "@ethersproject/bytes";
+import { recoverPublicKey } from "@ethersproject/signing-key";
+import { verifyMessage } from "@ethersproject/wallet";
+import {
+  etherV6Id,
+  convertBlockNumberToLeftPadHex,
+  generateMessageForIdentityProof,
+} from "./helpers/utils";
 
 dotenv.config();
 
 describe("generateProofOfIdentity", () => {
   const provider = ethers.getDefaultProvider();
-  const signer = ethers.Wallet.fromPhrase(process.env.SEED_PHRASE, provider);
+  const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+  const PKP = process.env.PKP;
+  const PKPAddress = process.env.PKPAddress;
   const domain = "localhost";
   const origin = "https://localhost/login";
   const statement =
-    "This is a test statement.  You can put anything you want here.";
+    "This is a test statement. You can put anything you want here.";
   const fingerprint = {
     blockNumber: 420,
-    publicSignal: ethers.id("public_signal"),
+    publicSignal: etherV6Id("public_signal"),
   };
 
   let authSig;
-  let dataSigned, signature, publicKey;
+  let dataSigned, signature, concatFingerprint;
 
   beforeAll(async () => {
     authSig = await generateAuthSig(signer, domain, origin, statement);
     fingerprint.message = authSig.signedMessage;
     fingerprint.signature = authSig.sig;
+    const proofOfIdentityOutput = await generateProofOfIdentity(
+      authSig,
+      fingerprint,
+      PKP
+    );
     ({
       signatures: {
-        sig1: { dataSigned, signature, publicKey },
+        sig1: { dataSigned }, // dataSigned is a raw message which is signed. That is dataSigned is generated after some operations which are abstracted by verifyMessage
       },
-    } = await generateProofOfIdentity(authSig, fingerprint));
-  });
-
-  it("returns the concatenated fingerprint as EIP191 msg", async () => {
-    const concatFingerprint = ethers.concat([
+    } = proofOfIdentityOutput);
+    concatFingerprint = generateMessageForIdentityProof([
       signer.address,
-      ethers.zeroPadValue(
-        ethers.hexlify(ethers.toBeArray(fingerprint.blockNumber)),
-        32
-      ),
+      convertBlockNumberToLeftPadHex(fingerprint.blockNumber),
       fingerprint.publicSignal,
     ]);
-
-    expect(dataSigned).toEqual(ethers.hashMessage(concatFingerprint);
+    // encodedSig is the  main signature that we need to use
+    signature = joinSignature({
+      r: "0x" + proofOfIdentityOutput.signatures.sig1.r,
+      s: "0x" + proofOfIdentityOutput.signatures.sig1.s,
+      v: proofOfIdentityOutput.signatures.sig1.recid,
+    });
   });
 
-  it("returns a valid signature", async () => {
-    const concatFingerprint = ethers.concat([
-      signer.address,
-      ethers.zeroPadValue(
-        ethers.hexlify(ethers.toBeArray(fingerprint.blockNumber)),
-        32
-      ),
-      fingerprint.publicSignal,
-    ]);
+  it("recovers public  key from returned signature", async () => {
+    const recoveredPubkey = recoverPublicKey(dataSigned, signature);
+    expect(recoveredPubkey).toEqual(PKP);
+  });
 
-    expect(dataSigned).toEqual(concatFingerprint);
+  it("recovers public address from returned signature", async () => {
+    const recoveredAddress = recoverAddress(dataSigned, signature);
+    expect(recoveredAddress).toEqual(PKPAddress);
+  });
+
+  it("recovers public address via message and returned signature", async () => {
+    const recoveredAddressViaMessage = verifyMessage(
+      concatFingerprint,
+      signature
+    );
+    expect(recoveredAddressViaMessage).toEqual(PKPAddress);
   });
 });

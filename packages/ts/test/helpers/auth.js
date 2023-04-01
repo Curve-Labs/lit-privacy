@@ -12,7 +12,10 @@ export const generateAuthSig = async (signer, domain, origin, statement) => {
   });
   const messageToSign = siweMessage.prepareMessage();
   const signature = await signer.signMessage(messageToSign);
-  const recoveredAddress = ethers.verifyMessage(messageToSign, signature);
+  const recoveredAddress = ethers.utils.verifyMessage(messageToSign, signature);
+  console.log("-------------------------------------");
+  console.log("Signer address and recovered address",signer.address, recoveredAddress);
+  console.log("-------------------------------------");
   return {
     sig: signature,
     derivedVia: "web3.eth.personal.sign",
