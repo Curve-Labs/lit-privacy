@@ -2,13 +2,13 @@
 pragma solidity 0.8.19;
 
 import {ERC2771Recipient} from "@opengsn/contracts/src/ERC2771Recipient.sol";
-import {Executor, Enum} from "@gnosis.pm/safe-contracts/contracts/base/Executor.sol";
 import {ContextUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
 import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
-import {ProofVerifierStorage} from "./ProofVerifierStorage.sol";
+import {ProofVerifierRelayerStorage} from "./ProofVerifierRelayerStorage.sol";
 import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
-import {IProofVerifierErrorsAndEvents} from "./IProofVerifierErrorsAndEvents.sol";
+import {IProofVerifierRelayerErrorsAndEvents} from "./IProofVerifierRelayerErrorsAndEvents.sol";
+import {IProofRelayHandler} from "./ProofRelayHandler/IProofRelayHandler.sol";
 
 /// @title Proof Verifier
 /// @author Mihirsinh Parmar from Curve Labs
@@ -16,42 +16,43 @@ contract ProofVerifierRelayer is
     ERC2771Recipient,
     OwnableUpgradeable,
     UUPSUpgradeable,
-    Executor,
-    ProofVerifierStorage,
-    IProofVerifierErrorsAndEvents
+    ProofVerifierRelayerStorage,
+    IProofVerifierRelayerErrorsAndEvents
 {
     enum DeploymentMode {
-        UPGRADEABLE,
-        NON_UPGRADEABLE
+        PROXY,
+        NON_PROXY
     }
 
-    constructor(DeploymentMode _deploymentMode) initializer {
-        if (_deploymentMode == DeploymentMode.UPGRADEABLE) {
+    constructor(DeploymentMode _deploymentMode) {
+        if (_deploymentMode == DeploymentMode.PROXY) {
             _disableInitializers();
         }
     }
 
-    function initialise() external initializer {
+    function initialise(address _publicPkpAddress) external initializer {
         // initialise state variables
+        publicPkpAddress = _publicPkpAddress;
     }
 
     // verify proof and relay the payload to destination contract
     // blockNumer: zero left padded hexadecimal block number
-    // publicSignal: abi.encoded message that needs to be sent as payload
+    // publicSignal: a application specific salt/signal to add randomness
     // identityProof: signature returned from ProofOfIdentity Lit Action
-    // membershipProod: signature returned from ProofOfMembership Lit Action 
+    // membershipProof: signature returned from ProofOfMembership Lit Action
+    // to: address of business logic contract
+    // data: encoded data to be passed to business logic contract
     function proveAndRelay(
         bytes32 blockNumber,
+        address to,
         bytes memory publicSignal,
         bytes memory identityProof,
         bytes memory membershipProof,
-        address to,
-        uint256 value,
         bytes memory data
     ) external {
         // recreate nullifier hash
         bytes32 _nullifierHash = keccak256(
-            abi.encode(identityProof, blockNumber, publicSignal)
+            bytes.concat(identityProof, blockNumber, publicSignal)
         );
 
         // verify proofs
@@ -67,20 +68,14 @@ contract ProofVerifierRelayer is
             revert InvalidSignature();
         }
 
-        // check if nullifier hash has been used or not
-        if (!nullifierHashes[_nullifierHash]) {
-            revert NullifierAlreadyUsed(_nullifierHash);
-        }
-        // mark the nullifier hash as marked
-        nullifierHashes[_nullifierHash] = true;
+        // generate identity hash
+        bytes32 _identityHash = keccak256(identityProof);
 
         // relay public signal
-        // by default on Call Operation will be made, no delegate.
-        // This is to prevent any external to be ran in this contract context
-        bool success = execute(to, value, data, Enum.Operation.Call, gasleft());
-        if (!success) {
-            revert RelayedExecutionReverted();
-        }
+        // business logic to  be implemented at implementation contract
+        // if you want a member to only interact once, you can limit it by ensuring a nullifier hash is used only once
+        // if you want a user to only interact once, you can limit it by ensuring an identifier  hash is used only once
+        IProofRelayHandler(to).handleRelay(data, _nullifierHash, _identityHash);
         emit Success();
     }
 

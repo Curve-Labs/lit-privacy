@@ -5,8 +5,6 @@ import "@nomicfoundation/hardhat-toolbox";
 import "hardhat-deploy";
 import "@openzeppelin/hardhat-upgrades";
 import "hardhat-contract-sizer";
-import "./task/adminManagement.task";
-import "./task/claimManagement.task";
 import { NetworkUserConfig } from "hardhat/types";
 dotenv.config({ path: "./.env" });
 
