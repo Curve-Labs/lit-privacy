@@ -2,16 +2,16 @@ import * as dotenv from "dotenv";
 import { ethers } from "ethers";
 import { generateProofOfIdentity } from "../connectors/proofOfIdentity.js";
 import { generateAuthSig } from "./helpers/auth.js";
-import { expect } from "@jest/globals";
-import { recoverAddress } from "@ethersproject/transactions";
-import { joinSignature } from "@ethersproject/bytes";
-import { recoverPublicKey } from "@ethersproject/signing-key";
-import { verifyMessage } from "@ethersproject/wallet";
 import {
   etherV6Id,
   convertBlockNumberToLeftPadHex,
   generateMessageForIdentityProof,
 } from "./helpers/utils";
+import { expect } from "@jest/globals";
+import { recoverAddress } from "@ethersproject/transactions";
+import { joinSignature } from "@ethersproject/bytes";
+import { recoverPublicKey } from "@ethersproject/signing-key";
+import { verifyMessage } from "@ethersproject/wallet";
 
 dotenv.config();
 

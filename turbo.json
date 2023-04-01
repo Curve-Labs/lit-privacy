@@ -9,6 +9,9 @@
     "lint": {
       "outputs": []
     },
+    "test": {
+      
+    },
     "dev": {
       "cache": false
     }
