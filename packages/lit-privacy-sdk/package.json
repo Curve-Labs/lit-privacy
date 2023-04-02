@@ -1,6 +1,6 @@
 {
   "name": "lit-privacy-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -28,6 +28,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "version:patch": "yarn version patch",
     "version:minor": "yarn version minor",
     "version:major": "yarn version major",
     "prepare": "yarn build",
