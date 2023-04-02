@@ -1,5 +1,55 @@
 {
   "name": "lit-privacy-sdk",
-  "version": "0.1.0",
-  "private": true
+  "version": "1.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Curve-Labs/lit-privacy-sdk.git"
+  },
+  "packageManager": "yarn@3.5.0",
+  "keywords": [
+    "lit",
+    "lit protocol",
+    "lit protocol privacy",
+    "proof of membership",
+    "proof of identity"
+  ],
+  "author": {
+    "name": "Mihirsinh Parmar",
+    "email": "mihirsinh@curvelabs.eu"
+  },
+  "bugs": {
+    "url": "https://github.com/Curve-Labs/lit-privacy-sdk/issues"
+  },
+  "homepage": "https://github.com/Curve-Labs/lit-privacy-sdk/tree/main/packages/lit-privacy-sdk#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "version:patch": "yarn version patch",
+    "version:minor": "yarn version minor",
+    "version:major": "yarn version major",
+    "prepare": "yarn build",
+    "publish": "yarn prepare && yarn npm publish",
+    "publish:minor": "yarn prepare && yarn version:minor && yarn npm publish",
+    "publish:major": "yarn prepare && yarn version:major && yarn npm publish"
+  },
+  "dependencies": {
+    "@gelatonetwork/relay-sdk": "^3.5.0",
+    "@lit-protocol/lit-node-client": "^2.1.104",
+    "ethers": "^5.4.7",
+    "lit-js-sdk": "^1.1.249",
+    "siwe": "^1.1.6"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=16.16.0"
+  },
+  "files": [
+    "dist/**/*"
+  ]
 }
