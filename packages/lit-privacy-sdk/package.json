@@ -1,9 +1,10 @@
 {
   "name": "lit-privacy-sdk",
-  "version": "0.3.0",
+  "version": "0.13.0",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "type": "commonjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Curve-Labs/lit-privacy-sdk.git"
@@ -27,7 +28,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "prepare": "yarn version minor && yarn build"
+    "prepare": "yarn version minor && yarn build",
+    "publish": "yarn prepare && yarn npm publish"
   },
   "dependencies": {
     "@gelatonetwork/relay-sdk": "^3.5.0",
