@@ -124,7 +124,7 @@ export default [
         "type": "address"
       }
     ],
-    "name": "initialise",
+    "name": "initialize",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

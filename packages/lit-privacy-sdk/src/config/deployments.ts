@@ -2,7 +2,7 @@ import { Deployments } from "../types/Deployments";
 
 const deployments: Deployments = {
     goerli: "",
-    mumbai: "0x9694B1806fc6b2905b31FA5A8bc1a731E4CcC973",
+    mumbai: "0x1015667c5af9B7c9C3f056D2F2Af7624DcC0274C",
     matic: "",
     ethereum: "",
 }
