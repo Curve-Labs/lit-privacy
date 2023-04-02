@@ -1,6 +1,6 @@
 {
   "name": "lit-privacy-sdk",
-  "version": "0.13.0",
+  "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -24,12 +24,16 @@
   "bugs": {
     "url": "https://github.com/Curve-Labs/lit-privacy-sdk/issues"
   },
-  "homepage": "https://github.com/Curve-Labs/lit-privacy-sdk#readme",
+  "homepage": "https://github.com/Curve-Labs/lit-privacy-sdk/tree/main/packages/lit-privacy-sdk#readme",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "prepare": "yarn version minor && yarn build",
-    "publish": "yarn prepare && yarn npm publish"
+    "version:minor": "yarn version minor",
+    "version:major": "yarn version major",
+    "prepare": "yarn build",
+    "publish": "yarn prepare && yarn npm publish",
+    "publish:minor": "yarn prepare && yarn version:minor && yarn npm publish",
+    "publish:major": "yarn prepare && yarn version:major && yarn npm publish"
   },
   "dependencies": {
     "@gelatonetwork/relay-sdk": "^3.5.0",
