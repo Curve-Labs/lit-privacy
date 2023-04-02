@@ -30,8 +30,8 @@ contract ProofVerifierRelayer is
         }
     }
 
-    function initialise(address _publicPkpAddress) external initializer {
-        // initialise state variables
+    function initialize(address _publicPkpAddress) external initializer {
+        // initialize state variables
         publicPkpAddress = _publicPkpAddress;
     }
 

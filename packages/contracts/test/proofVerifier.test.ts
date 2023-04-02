@@ -7,12 +7,7 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { Address } from "hardhat-deploy/dist/types";
 import { BytesLike } from "ethers";
 import { TestERC721 } from "../typechain-types";
-
-const Contracts = {
-  ProofVerifier: "ProofVerifierRelayer",
-  TestContract: "Voting",
-  TestERC721: "TestERC721",
-};
+import { Contracts } from "../deploy/00_deploy";
 
 function convertBlockNumberToLeftPadHex(blockNumber: number) {
   const blockNumberInHex: BytesLike = ethers.utils.hexlify(blockNumber);
@@ -48,7 +43,7 @@ async function setupProofVerifier(
   const proofVerifierInstance = (await proofVerifierFactory.deploy(
     deploymentMode
   )) as ProofVerifierRelayer;
-  await proofVerifierInstance.initialise(publicPkpAddres);
+  await proofVerifierInstance.initialize(publicPkpAddres);
   return { proofVerifierInstance };
 }
 
