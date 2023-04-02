@@ -10346,9 +10346,9 @@ prettier@latest:
   languageName: node
   linkType: hard
 
-"ts@workspace:packages/ts":
+"ts@workspace:packages/lit-actions":
   version: 0.0.0-use.local
-  resolution: "ts@workspace:packages/ts"
+  resolution: "ts@workspace:packages/lit-actions"
   dependencies:
     dotenv: ^16.0.3
     ethers: ^5.4.7
