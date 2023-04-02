@@ -18,8 +18,8 @@ dotenv.config();
 describe("generateProofOfIdentity", () => {
   const provider = ethers.getDefaultProvider();
   const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
-  const PKP = process.env.PKP;
-  const PKPAddress = process.env.PKPAddress;
+  const PKP = process.env.PKP_IDENTITY;
+  const PKPAddress = process.env.PKPAddress_IDENTITY;
   const domain = "localhost";
   const origin = "https://localhost/login";
   const statement =
@@ -57,7 +57,7 @@ describe("generateProofOfIdentity", () => {
       s: "0x" + proofOfIdentityOutput.signatures.sig1.s,
       v: proofOfIdentityOutput.signatures.sig1.recid,
     });
-  });
+  }, process.env.TEST_TIMEOUT_TIME);
 
   it("recovers public  key from returned signature", async () => {
     const recoveredPubkey = recoverPublicKey(dataSigned, signature);
