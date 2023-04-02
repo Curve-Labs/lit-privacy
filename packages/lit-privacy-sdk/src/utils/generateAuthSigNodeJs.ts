@@ -1,5 +1,5 @@
 import { JsonAuthSig } from '@lit-protocol/types';
-import { ethers } from "ethers";
+import * as ethers from "ethers";
 import siwe from "siwe";
 
 export default async function generateAuthSigNode(
