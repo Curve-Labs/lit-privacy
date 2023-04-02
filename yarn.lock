@@ -5407,6 +5407,7 @@ __metadata:
     hardhat-contract-sizer: ^2.8.0
     hardhat-deploy: ^0.11.25
     hardhat-gas-reporter: ^1.0.8
+    lit-privacy-sdk: "workspace:^"
     solidity-coverage: ^0.8.1
     ts-node: ^10.9.1
     typechain: ^8.1.0
@@ -9375,7 +9376,7 @@ eslint-config-turbo@latest:
   languageName: node
   linkType: hard
 
-"lit-privacy-sdk@workspace:packages/lit-privacy-sdk":
+"lit-privacy-sdk@workspace:^, lit-privacy-sdk@workspace:packages/lit-privacy-sdk":
   version: 0.0.0-use.local
   resolution: "lit-privacy-sdk@workspace:packages/lit-privacy-sdk"
   dependencies:
