@@ -1,4 +1,4 @@
-import ethers from "ethers";
+import * as ethers from "ethers";
 
 // logic to generate same output as ethers.id() of ethers@v6
 export function etherV6Id(input: any): string {
