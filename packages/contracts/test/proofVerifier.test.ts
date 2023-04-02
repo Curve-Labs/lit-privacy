@@ -7,7 +7,7 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { Address } from "hardhat-deploy/dist/types";
 import { BytesLike } from "ethers";
 import { TestERC721 } from "../typechain-types";
-import { Contracts } from "../deploy/00_deploy";
+import { Contracts } from "../deploy/00_deploy_pvr";
 
 function convertBlockNumberToLeftPadHex(blockNumber: number) {
   const blockNumberInHex: BytesLike = ethers.utils.hexlify(blockNumber);
