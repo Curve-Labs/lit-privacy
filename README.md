@@ -7,6 +7,8 @@ https://github.com/LIT-Protocol/LitGrants/issues/35
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 - `lit-privacy-sdk`: package that will be used to implement lit procotol for a privacy-enabled processing.
+- `lit-actions`: package for the development of lit-actions
+- `contracts`: package for the development of contracts required for the package to work
 
 ### Utilities
 
