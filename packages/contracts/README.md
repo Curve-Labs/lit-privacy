@@ -16,7 +16,7 @@ Given user wants to interact with the contract privately
 - PVR Contract will verify the proof and invoke `handleRelay` at the destination chain.
 
 ## Visual Representation
-
+![Visual Representation of Proof Verifier Relayer contracts](https://nftstorage.link/ipfs/bafkreifdx7swpk2prx42vumzf6ctd5i4gmjmq4owimog7hkjrha6jlxojm "Proof Verifier Relayer")
 
 ## Usage
 To make your contract accept relay
