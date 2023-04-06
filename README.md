@@ -6,9 +6,12 @@ https://github.com/LIT-Protocol/LitGrants/issues/35
 ### Packages
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
-- `lit-privacy-sdk`: package that will be used to implement lit procotol for a privacy-enabled processing.
-- `lit-actions`: package for the development of lit-actions
-- `contracts`: package for the development of contracts required for the package to work
+- [`lit-privacy-sdk`](https://github.com/Curve-Labs/lit-privacy/tree/main/packages/lit-privacy-sdk#readme): package that will be used to implement lit procotol for a privacy-enabled processing.
+- [`lit-actions`](https://github.com/Curve-Labs/lit-privacy/tree/main/packages/lit-actions#readme): package for the development of lit-actions
+- [`contracts`](https://github.com/Curve-Labs/lit-privacy/tree/main/packages/contracts#readme): package for the development of contracts required for the package to work
+
+###  Architecture
+![lit-privacy-sdk architcture](https://camo.githubusercontent.com/0813cab56a8f2d5677831256dc1de82b3502f216824cc1477db16064ab821d39/68747470733a2f2f692e696d6775722e636f6d2f383257516b73332e6a7067 "Architecture")
 
 ### Utilities
 
