@@ -60,12 +60,12 @@ describe("generateProofOfIdentity", () => {
   }, process.env.TEST_TIMEOUT_TIME);
 
   it("recovers public  key from returned signature", async () => {
-    const recoveredPubkey = recoverPublicKey(dataSigned, signature);
+    const recoveredPubkey = recoverPublicKey("0x"+dataSigned, signature);
     expect(recoveredPubkey).toEqual(PKP);
   });
 
   it("recovers public address from returned signature", async () => {
-    const recoveredAddress = recoverAddress(dataSigned, signature);
+    const recoveredAddress = recoverAddress("0x"+dataSigned, signature);
     expect(recoveredAddress).toEqual(PKPAddress);
   });
 

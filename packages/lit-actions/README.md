@@ -36,6 +36,7 @@ TEST_TIMEOUT_TIME=
 USE_ACTION_FROM_IPFS=
 // add your Lit Action specific Enviornment variables
 ```
+Note: The private key should hold an ENS domain, else the test will fail.
 ### Create Lit Action file
 Create a new file in ./lit-actions/YOUR_LIT_ACTION_NAME.js
 
