@@ -19,21 +19,29 @@ export default `const generateProofOfIdentity = async () => {
       contractAddress: tokenAddress,
       standardContractType: tokenType,
       chain,
-      method: 'balanceOf',
-      parameters: [
-        address
-      ],
+      method: "balanceOf",
+      parameters: [address],
       returnValueTest: {
-        comparator: '>',
-        value: '0'
-      }
-    }
-  ]
+        comparator: ">",
+        value: "0",
+      },
+    },
+  ];
   // check lit conditions
-  const result = await LitActions.checkConditions({conditions, authSig, chain});
+  const result = await LitActions.checkConditions({
+    conditions,
+    authSig,
+    chain,
+  });
   // return if balance is 0
-  if(!result) {
+  if (!result) {
     console.log("Zero Balance. No Membership found.");
+    LitActions.setResponse({
+      response: JSON.stringify({
+        success: false,
+        data: { balance: 0 },
+      }),
+    });
     return;
   }
   // user has balance > 0
@@ -42,9 +50,11 @@ export default `const generateProofOfIdentity = async () => {
     32
   );
 
-  const toSign = ethers.utils.keccak256(ethers.utils.hexlify(
-    ethers.utils.concat([identityProof, parsedBlockNumber, publicSignal])
-  ));
+  const toSign = ethers.utils.keccak256(
+    ethers.utils.hexlify(
+      ethers.utils.concat([identityProof, parsedBlockNumber, publicSignal])
+    )
+  );
 
   const sigShare = await LitActions.ethPersonalSignMessageEcdsa({
     message: toSign,
@@ -54,4 +64,4 @@ export default `const generateProofOfIdentity = async () => {
 };
 
 generateProofOfIdentity();
-`;
+`

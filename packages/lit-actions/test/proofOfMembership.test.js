@@ -71,6 +71,10 @@ describe("generateProofOfMembership", () => {
       MembershipFingerprint,
       PKP_Membership
     );
+    console.log(proofOfMembershipOutput)
+    if(!proofOfMembershipOutput.response?.success && proofOfMembershipOutput.response?.data?.balance === 0){
+      throw Error("No balance found.");
+    }
     if (proofOfMembershipOutput.signatures?.sig1 === undefined) {
       console.log("No signature was done because no membership found");
     }
