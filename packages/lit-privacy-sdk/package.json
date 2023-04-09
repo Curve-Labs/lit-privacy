@@ -40,7 +40,6 @@
     "@gelatonetwork/relay-sdk": "^3.5.0",
     "@lit-protocol/lit-node-client": "^2.1.104",
     "ethers": "^5.4.7",
-    "lit-js-sdk": "^1.1.249",
     "siwe": "^1.1.6"
   },
   "devDependencies": {
