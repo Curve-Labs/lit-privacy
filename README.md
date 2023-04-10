@@ -11,7 +11,7 @@ https://github.com/LIT-Protocol/LitGrants/issues/35
 - [`contracts`](https://github.com/Curve-Labs/lit-privacy/tree/main/packages/contracts#readme): package for the development of contracts required for the package to work
 
 ###  Architecture
-![lit-privacy-sdk architcture](https://camo.githubusercontent.com/0813cab56a8f2d5677831256dc1de82b3502f216824cc1477db16064ab821d39/68747470733a2f2f692e696d6775722e636f6d2f383257516b73332e6a7067 "Architecture")
+![Lit Privacy SDK Architecture Diagram](https://user-images.githubusercontent.com/51956954/230840855-9577ef32-4890-463f-b420-c6a10145b6c8.jpg)
 
 ### Utilities
 
