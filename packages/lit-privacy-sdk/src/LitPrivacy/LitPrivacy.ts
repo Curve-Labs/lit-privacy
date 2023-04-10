@@ -25,12 +25,14 @@ export default class LitPrivacy extends LitPrivacyConstants {
     publicSignal: string,
     tokenAddress: string,
     blockNumber: number,
-    tokenType: string
+    tokenType: string,
+    authSig: JsonAuthSig
   ) {
     super();
     this.litNodeClient = new LitJsSdk.LitNodeClient({
       litNetwork: "serrano",
     });
+    this.authSig = authSig;
     this.chain = chain;
     this.publicSignal = etherV6Id(publicSignal);
     this.provider = provider;
@@ -42,9 +44,6 @@ export default class LitPrivacy extends LitPrivacyConstants {
 
   async initialize() {
     await this.litNodeClient.connect();
-    this.authSig = await LitJsSdk.checkAndSignAuthMessage({
-      chain: this.chain,
-    });
     this.initialized = true;
   }
 
