@@ -37,6 +37,10 @@ contract ProofVerifierRelayer is
         publicPkpAddress = _publicPkpAddress;
     }
 
+    function updatePkpAddress(address _newPkpAddress) external onlyOwner {
+        publicPkpAddress = _newPkpAddress;
+    }
+
     // verify proof and relay the payload to destination contract
     // blockNumer: zero left padded hexadecimal block number
     // publicSignal: a application specific salt/signal to add randomness

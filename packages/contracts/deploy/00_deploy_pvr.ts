@@ -23,7 +23,6 @@ const deployFunction: DeployFunction = async (hre) => {
         from: deployer.address,
         args: [1],
         log: true,
-        skipIfAlreadyDeployed: true
     });
     const proofVerifierRelayerInstance = await ethers.getContractAt(Contracts.ProofVerifier, proofVerifierRelayerAddress);
     await (await proofVerifierRelayerInstance.initialize(LitPrivacyConstants.MEMBERSHIP_PROOF_SIGNER_PKP.ADDRESS)).wait();
@@ -32,8 +31,7 @@ const deployFunction: DeployFunction = async (hre) => {
     const {address: votingAddress} = await deploy(Contracts.TestContract, {
         from: deployer.address,
         args: [tokenAddress, proofVerifierRelayerAddress],
-        log: true,
-        skipIfAlreadyDeployed: true
+        log: true
     });
 }
 
