@@ -1,7 +1,7 @@
+import { AuthSig } from '@lit-protocol/types';
 import * as LitJsSdk from "@lit-protocol/lit-node-client";
 import * as ethers from "ethers";
 import LitPrivacyConstants from "./LitPrivacyConstants";
-import { JsonAuthSig } from "@lit-protocol/types";
 import abi from "../config/abi";
 import deployments from "../config/deployments";
 import { GelatoRelay, SponsoredCallRequest } from "@gelatonetwork/relay-sdk";
@@ -12,7 +12,7 @@ export default class LitPrivacy extends LitPrivacyConstants {
   private litNodeClient: LitJsSdk.LitNodeClient;
   public chain: string;
   public provider;
-  public authSig: JsonAuthSig | undefined;
+  public authSig: AuthSig | undefined;
   public publicSignal: string;
   public tokenAddress: string;
   public blockNumber: number;
@@ -26,12 +26,11 @@ export default class LitPrivacy extends LitPrivacyConstants {
     tokenAddress: string,
     blockNumber: number,
     tokenType: string,
-    authSig: JsonAuthSig
+    authSig: AuthSig,
+    litNodeClient: LitJsSdk.LitNodeClient
   ) {
     super();
-    this.litNodeClient = new LitJsSdk.LitNodeClient({
-      litNetwork: "serrano",
-    });
+    this.litNodeClient = litNodeClient;
     this.authSig = authSig;
     this.chain = chain;
     this.publicSignal = etherV6Id(publicSignal);
@@ -39,11 +38,6 @@ export default class LitPrivacy extends LitPrivacyConstants {
     this.tokenAddress = tokenAddress;
     this.blockNumber = blockNumber;
     this.tokenType = tokenType;
-    this.initialized = false;
-  }
-
-  async initialize() {
-    await this.litNodeClient.connect();
     this.initialized = true;
   }
 
@@ -235,13 +229,19 @@ export default class LitPrivacy extends LitPrivacyConstants {
         "AuthSig is undefined. Ensure LitPrivacy instance is initialized properly"
       );
     }
-    return await this.litNodeClient.executeJs({
-      ipfsId: litActionCid,
-      authSig: this.authSig,
-      jsParams: {
-        fingerprint,
-        publicKey: PKP,
-      },
-    });
+    try {
+      return await this.litNodeClient.executeJs({
+        ipfsId: litActionCid,
+        authSig: this.authSig,
+        jsParams: {
+          fingerprint,
+          publicKey: PKP,
+        },
+      });
+    } catch (e) {
+      console.log("Error occured while running Lit Action");
+      console.log(e);
+      throw Error("Error occured while running Lit Action");
+    }
   }
 }
