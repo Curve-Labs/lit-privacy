@@ -1,4 +1,4 @@
-import { JsonAuthSig } from '@lit-protocol/types';
+import { AuthSig } from '@lit-protocol/types';
 import * as ethers from "ethers";
 import siwe from "siwe";
 
@@ -8,7 +8,7 @@ export default async function generateAuthSigNode(
   origin: string,
   statement: string,
   chainId: number = 1
-): Promise<JsonAuthSig> {
+): Promise<AuthSig> {
   const signer = new ethers.Wallet(privateKey);
   const siweMessage = new siwe.SiweMessage({
     domain: domain,
