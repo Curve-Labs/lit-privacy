@@ -51,6 +51,7 @@ describe("generateProofOfIdentity", () => {
       convertBlockNumberToLeftPadHex(fingerprint.blockNumber),
       fingerprint.publicSignal,
     ]);
+    console.log("dataSigned - identity", dataSigned);
     // encodedSig is the  main signature that we need to use
     signature = joinSignature({
       r: "0x" + proofOfIdentityOutput.signatures.sig1.r,
@@ -60,12 +61,12 @@ describe("generateProofOfIdentity", () => {
   }, process.env.TEST_TIMEOUT_TIME);
 
   it("recovers public  key from returned signature", async () => {
-    const recoveredPubkey = recoverPublicKey("0x"+dataSigned, signature);
+    const recoveredPubkey = recoverPublicKey("0x" + dataSigned, signature);
     expect(recoveredPubkey).toEqual(PKP);
   });
 
   it("recovers public address from returned signature", async () => {
-    const recoveredAddress = recoverAddress("0x"+dataSigned, signature);
+    const recoveredAddress = recoverAddress("0x" + dataSigned, signature);
     expect(recoveredAddress).toEqual(PKPAddress);
   });
 
