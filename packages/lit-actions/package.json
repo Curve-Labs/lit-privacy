@@ -7,7 +7,7 @@
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "dependencies": {
-    "@lit-protocol/lit-node-client": "^2.1.104",
+    "@lit-protocol/lit-node-client": "^2.1.118",
     "ethers": "^5.4.7"
   },
   "devDependencies": {

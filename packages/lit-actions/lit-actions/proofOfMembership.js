@@ -1,4 +1,4 @@
-export default `const generateProofOfIdentity = async () => {
+export default `const generateProofOfMembership = async () => {
   const {
     message,
     identityProof,
@@ -42,16 +42,18 @@ export default `const generateProofOfIdentity = async () => {
     32
   );
 
-  const toSign = ethers.utils.keccak256(ethers.utils.hexlify(
+  const dataToBeSigned = ethers.utils.keccak256(ethers.utils.hexlify(
     ethers.utils.concat([identityProof, parsedBlockNumber, publicSignal])
   ));
 
-  const sigShare = await LitActions.ethPersonalSignMessageEcdsa({
-    message: toSign,
+  const toSign = Array.from(ethers.utils.arrayify(ethers.utils.hashMessage(dataToBeSigned)))
+
+  const sigShare = await LitActions.signEcdsa({
+    toSign: toSign,
     publicKey: publicKey,
     sigName: "sig1",
   });
 };
 
-generateProofOfIdentity();
+generateProofOfMembership();
 `;
