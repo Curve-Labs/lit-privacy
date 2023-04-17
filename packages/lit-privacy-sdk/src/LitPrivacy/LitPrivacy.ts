@@ -155,8 +155,7 @@ export default class LitPrivacy extends LitPrivacyConstants {
     // check if no membership found
     if (
       // @ts-ignore
-      !proofOfMembershipOutput.response?.success && // @ts-ignore
-      proofOfMembershipOutput.response?.data?.balance === 0
+      !proofOfMembershipOutput.response?.success
     ) {
       console.log("No signature was done because no membership found");
       throw Error("No signature was done because no membership found.");
