@@ -36,6 +36,11 @@ export default `const generateProofOfMembership = async () => {
   // return if balance is 0
   if (!result) {
     console.log("Zero Balance. No Membership found.");
+    LitActions.setResponse({
+      response: JSON.stringify({
+        success: false,
+      }),
+    });
     return;
   }
   // user has balance > 0
@@ -67,6 +72,11 @@ export default `const generateProofOfMembership = async () => {
     message: dataToBeSigned,
     publicKey: publicKey,
     sigName: "sig1",
+  });
+  LitActions.setResponse({
+    response: JSON.stringify({
+      success: true,
+    }),
   });
 };
 

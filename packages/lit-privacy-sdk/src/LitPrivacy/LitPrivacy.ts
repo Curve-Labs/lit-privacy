@@ -152,13 +152,19 @@ export default class LitPrivacy extends LitPrivacyConstants {
       "Logs from Proof of Membership Lit Action:",
       proofOfMembershipOutput.logs
     );
+    // check if no membership found
+    if (
+      // @ts-ignore
+      !proofOfMembershipOutput.response?.success
+    ) {
+      console.log("No signature was done because no membership found");
+      throw Error("No signature was done because no membership found.");
+    }
     // the returned output will have signature under `sig1` property
     // check if the user has correct membership or not by ensuring signature is generated
     if (proofOfMembershipOutput.signatures?.sig1 === undefined) {
-      console.log("No signature was done because no membership found");
-      throw Error(
-        "Failed generating Proof of Membership. Either the wallet doesn't contain the token or check the parameters"
-      );
+      console.log("Check parameters passed to LitAction");
+      throw Error("Check parameters passed to LitAction.");
     }
 
     // this is the final membership proof generated from Lit Action
@@ -238,10 +244,18 @@ export default class LitPrivacy extends LitPrivacyConstants {
     // Without a specific API key, the relay request will fail!
     // Go to https://relay.gelato.network to get a testnet API key with 1Balance.
     // Send a relay request using Gelato Relay!
-    const relayResponse = await relay.sponsoredCall(request, gelatoApiKey);
-
-    console.log(relayResponse);
-    return relayResponse.taskId;
+    try {
+      // Without a specific API key, the relay request will fail!
+      // Go to https://relay.gelato.network to get a testnet API key with 1Balance.
+      // Send a relay request using Gelato Relay!
+      const relayResponse = await relay.sponsoredCall(request, gelatoApiKey);
+      console.log(relayResponse);
+      return relayResponse.taskId;
+    } catch (e) {
+      console.error("Realy call failed.");
+      console.error(e);
+      return -1;
+    }
   }
 
   async executeLitAction(fingerprint: any, PKP: string, litActionCid: string) {

@@ -73,6 +73,9 @@ describe("generateProofOfMembership", () => {
       PKP_Membership
     );
     console.log({LitActionLogs: proofOfIdentityOutput.logs});
+    if(!proofOfMembershipOutput.response?.success){
+      throw Error("No balance found.");
+    }
     if (proofOfMembershipOutput.signatures?.sig1 === undefined) {
       console.log("No signature was done because no membership found");
     }
