@@ -1,6 +1,6 @@
 {
   "name": "lit-privacy-sdk",
-  "version": "1.0.2",
+  "version": "1.0.10",
   "description": "",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -34,15 +34,17 @@
     "prepare": "yarn build",
     "publish": "yarn prepare && yarn npm publish",
     "publish:minor": "yarn prepare && yarn version:minor && yarn npm publish",
-    "publish:major": "yarn prepare && yarn version:major && yarn npm publish"
+    "publish:major": "yarn prepare && yarn version:major && yarn npm publish",
+    "test": "yarn build && NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "dependencies": {
     "@gelatonetwork/relay-sdk": "^3.5.0",
-    "@lit-protocol/lit-node-client": "^2.1.104",
+    "@lit-protocol/lit-node-client": "^2.1.123",
     "ethers": "^5.4.7",
     "siwe": "^1.1.6"
   },
   "devDependencies": {
+    "jest": "^29.5.0",
     "typescript": "^5.0.3"
   },
   "engines": {

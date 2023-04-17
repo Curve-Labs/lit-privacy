@@ -1,4 +1,4 @@
-export default `const generateProofOfIdentity = async () => {
+export default `const generateProofOfMembership = async () => {
   const {
     message,
     identityProof,
@@ -19,20 +19,22 @@ export default `const generateProofOfIdentity = async () => {
       contractAddress: tokenAddress,
       standardContractType: tokenType,
       chain,
-      method: 'balanceOf',
-      parameters: [
-        address
-      ],
+      method: "balanceOf",
+      parameters: [address],
       returnValueTest: {
-        comparator: '>',
-        value: '0'
-      }
-    }
-  ]
+        comparator: ">",
+        value: "0",
+      },
+    },
+  ];
   // check lit conditions
-  const result = await LitActions.checkConditions({conditions, authSig, chain});
+  const result = await LitActions.checkConditions({
+    conditions,
+    authSig,
+    chain,
+  });
   // return if balance is 0
-  if(!result) {
+  if (!result) {
     console.log("Zero Balance. No Membership found.");
     return;
   }
@@ -42,16 +44,31 @@ export default `const generateProofOfIdentity = async () => {
     32
   );
 
-  const toSign = ethers.utils.keccak256(ethers.utils.hexlify(
-    ethers.utils.concat([identityProof, parsedBlockNumber, publicSignal])
-  ));
+  const dataToBeSigned = ethers.utils.keccak256(
+    ethers.utils.hexlify(
+      ethers.utils.concat([identityProof, parsedBlockNumber, publicSignal])
+    )
+  );
 
+  console.log({
+    dataToBeSigned,
+    parsedBlockNumber,
+    message,
+    identityProof,
+    signature,
+    blockNumber,
+    publicSignal,
+    tokenType,
+    chain,
+    authSig,
+    tokenAddress,
+  });
   const sigShare = await LitActions.ethPersonalSignMessageEcdsa({
-    message: toSign,
+    message: dataToBeSigned,
     publicKey: publicKey,
     sigName: "sig1",
   });
 };
 
-generateProofOfIdentity();
+generateProofOfMembership();
 `;

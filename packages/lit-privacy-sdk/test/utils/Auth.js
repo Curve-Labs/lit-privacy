@@ -1,32 +1,20 @@
-import { AuthSig } from '@lit-protocol/types';
-import * as ethers from "ethers";
-import siwe from "siwe";
+const ethers =  require("ethers");
+const siwe = require("siwe");
 
-export default async function generateAuthSigNode(
-  privateKey: string,
-  domain: string,
-  origin: string,
-  statement: string,
-  chainId: number = 1
-): Promise<AuthSig> {
-  const signer = new ethers.Wallet(privateKey);
+const generateAuthSig = async (signer, domain, origin, statement) => {
   const siweMessage = new siwe.SiweMessage({
-    domain: domain,
+    domain,
     address: await signer.getAddress(),
     statement,
     uri: origin,
     version: "1",
-    chainId: chainId,
+    chainId: "1",
   });
   const messageToSign = siweMessage.prepareMessage();
   const signature = await signer.signMessage(messageToSign);
   const recoveredAddress = ethers.utils.verifyMessage(messageToSign, signature);
   console.log("-------------------------------------");
-  console.log(
-    "Signer address and recovered address",
-    await signer.getAddress(),
-    recoveredAddress
-  );
+  console.log("Signer address and recovered address",signer.address, recoveredAddress);
   console.log("-------------------------------------");
   return {
     sig: signature,
@@ -34,4 +22,6 @@ export default async function generateAuthSigNode(
     signedMessage: messageToSign,
     address: recoveredAddress,
   };
-}
+};
+
+module.exports = {generateAuthSig};

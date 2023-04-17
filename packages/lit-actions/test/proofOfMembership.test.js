@@ -43,6 +43,7 @@ describe("generateProofOfMembership", () => {
 
   beforeAll(async () => {
     authSig = await generateAuthSig(signer, domain, origin, statement);
+    console.log({authSig});
     
     // generate identity proof to be passed as parameter to Membership Lit Action
     IdentityFingerprint.message = authSig.signedMessage;
@@ -71,6 +72,7 @@ describe("generateProofOfMembership", () => {
       MembershipFingerprint,
       PKP_Membership
     );
+    console.log({LitActionLogs: proofOfIdentityOutput.logs});
     if (proofOfMembershipOutput.signatures?.sig1 === undefined) {
       console.log("No signature was done because no membership found");
     }
@@ -95,6 +97,7 @@ describe("generateProofOfMembership", () => {
       s: "0x" + proofOfMembershipOutput.signatures.sig1.s,
       v: proofOfMembershipOutput.signatures.sig1.recid,
     });
+    console.log("Membership Proof:", signature);
   }, process.env.TEST_TIMEOUT_TIME);
 
   it("recovers public  key from returned signature", async () => {
