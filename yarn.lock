@@ -1697,30 +1697,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lit-protocol/access-control-conditions@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/access-control-conditions@npm:2.1.120"
+"@lit-protocol/access-control-conditions@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/access-control-conditions@npm:2.1.134"
   dependencies:
-    "@lit-protocol/constants": 2.1.120
-    "@lit-protocol/misc": 2.1.120
-    "@lit-protocol/types": 2.1.120
-    "@lit-protocol/uint8arrays": 2.1.120
+    "@lit-protocol/constants": 2.1.134
+    "@lit-protocol/misc": 2.1.134
+    "@lit-protocol/types": 2.1.134
+    "@lit-protocol/uint8arrays": 2.1.134
     ethers: ^5.7.1
     tslib: ^2.3.0
-  checksum: 071fc1b355e760b8cdc51fded57523bd6926ccdc24d4ba64b8bb3bc65aeb5894ba2a1b2a67f7c781516f9855d8563a936b41ece8f5e824e217d09e4fcb9fbc71
+  checksum: 5e44f1f436809db12f3e30d555487f774807a2d864c9908f3494ccd1da277b31011f5be9e031ca2b588e05588b5a3caf0b489eafd48d350abba857c329cb8402
   languageName: node
   linkType: hard
 
-"@lit-protocol/auth-browser@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/auth-browser@npm:2.1.120"
+"@lit-protocol/auth-browser@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/auth-browser@npm:2.1.134"
   dependencies:
-    "@lit-protocol/constants": 2.1.120
-    "@lit-protocol/misc": 2.1.120
-    "@lit-protocol/misc-browser": 2.1.120
-    "@lit-protocol/types": 2.1.120
-    "@lit-protocol/uint8arrays": 2.1.120
-    "@walletconnect/ethereum-provider": 2.5.1
+    "@lit-protocol/constants": 2.1.134
+    "@lit-protocol/misc": 2.1.134
+    "@lit-protocol/misc-browser": 2.1.134
+    "@lit-protocol/types": 2.1.134
+    "@lit-protocol/uint8arrays": 2.1.134
+    "@walletconnect/ethereum-provider": 2.7.0
     "@web3modal/standalone": 2.2.1
     ethers: ^5.7.1
     lit-connect-modal: ^0.1.11
@@ -1730,116 +1730,116 @@ __metadata:
     tweetnacl-util: ^0.13.3
     util: ^0.12.4
     web-vitals: ^3.0.4
-  checksum: 59de6248bad43a42a36872c837ba3db45ff7d39df11081e49b6145d017446b4ed9017230a076432a20a4d5aa837b4ac805f72b3491302f4722e3bb4c35dc1d3a
+  checksum: 6be54c22c679aef7d0922ab2065526f9ead4805196648468ed903af0ace2330f79b2fb9af703d912a9db0039da826f4ae276b06e058d42d056f7a211edf2df08
   languageName: node
   linkType: hard
 
-"@lit-protocol/bls-sdk@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/bls-sdk@npm:2.1.120"
-  checksum: 47f2d4578312b5d2346ee898b8412c290602c4febcfa6e3f7077832b47f4c4a9f2951d1301b2a7d0fa40bb9a6b8a01f9cc6274598b46c30694fac65ece3d901b
+"@lit-protocol/bls-sdk@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/bls-sdk@npm:2.1.134"
+  checksum: 5fbadfa7353dc748259668096ad12b19ce3fde998909adf98f3f0ad9731d81afc254c5dff8e297179e9b2c4622588c82891184850c24a0fd03760dc66fa37442
   languageName: node
   linkType: hard
 
-"@lit-protocol/constants@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/constants@npm:2.1.120"
+"@lit-protocol/constants@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/constants@npm:2.1.134"
   dependencies:
-    "@lit-protocol/types": 2.1.120
+    "@lit-protocol/types": 2.1.134
     tslib: ^2.3.0
-  checksum: fc5618bae553ea39345ca31d2c0fa1e72bc855a1469963d02453d00ae08ac564414d9094c18bc94c72af4543d88610a684095772de9edea50126ea72cb158467
+  checksum: 66a2d369b2bf3c7747152cfeb5e02e074cb121696cd9eac57332d1ecc46e7ae11ae452dc84a089f76e1529f9803ea26482bcecc51880b4cfc6a62db95d8b4a59
   languageName: node
   linkType: hard
 
-"@lit-protocol/crypto@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/crypto@npm:2.1.120"
+"@lit-protocol/crypto@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/crypto@npm:2.1.134"
   dependencies:
-    "@lit-protocol/bls-sdk": 2.1.120
-    "@lit-protocol/constants": 2.1.120
-    "@lit-protocol/ecdsa-sdk": 2.1.120
-    "@lit-protocol/misc": 2.1.120
-    "@lit-protocol/nacl": 2.1.120
-    "@lit-protocol/types": 2.1.120
-    "@lit-protocol/uint8arrays": 2.1.120
+    "@lit-protocol/bls-sdk": 2.1.134
+    "@lit-protocol/constants": 2.1.134
+    "@lit-protocol/ecdsa-sdk": 2.1.134
+    "@lit-protocol/misc": 2.1.134
+    "@lit-protocol/nacl": 2.1.134
+    "@lit-protocol/types": 2.1.134
+    "@lit-protocol/uint8arrays": 2.1.134
     ethers: ^5.7.1
     tslib: ^2.3.0
-  checksum: 9c20af0124708403f35b09431d214d04755347da8106973ff15489d4b0bea94753e0958dfa99b49d81bb620a50f155af37922ca322094d9a528c0842524e0bed
+  checksum: fbca6f525eaf02d0ba8aab68bcaae1617d81c5a3afa7b4be423286a99adf478a67605567f916f620fc0aafb42da4499b8e217d0a62dbcdd2a74e1bb9450bf565
   languageName: node
   linkType: hard
 
-"@lit-protocol/ecdsa-sdk@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/ecdsa-sdk@npm:2.1.120"
-  checksum: e5ea2ac95a2229f13b1418e2261243c918616a79edb11f04f57db025da8024a5bb531a042cf6e7bf468e5b4c2ca56bd6fe414e3688a2cf8a287c8ed7104fa2d8
+"@lit-protocol/ecdsa-sdk@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/ecdsa-sdk@npm:2.1.134"
+  checksum: e71fd3c43fc541b5ddedc996e782145e27497a609479a8a6be7149c806dbbebaf31775390cb38d38a7b9f0a9547fd7ca138e4cf75c5653a8697060ec145204d8
   languageName: node
   linkType: hard
 
-"@lit-protocol/encryption@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/encryption@npm:2.1.120"
+"@lit-protocol/encryption@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/encryption@npm:2.1.134"
   dependencies:
-    "@lit-protocol/bls-sdk": 2.1.120
-    "@lit-protocol/constants": 2.1.120
-    "@lit-protocol/crypto": 2.1.120
-    "@lit-protocol/ecdsa-sdk": 2.1.120
-    "@lit-protocol/misc": 2.1.120
-    "@lit-protocol/nacl": 2.1.120
-    "@lit-protocol/types": 2.1.120
-    "@lit-protocol/uint8arrays": 2.1.120
+    "@lit-protocol/bls-sdk": 2.1.134
+    "@lit-protocol/constants": 2.1.134
+    "@lit-protocol/crypto": 2.1.134
+    "@lit-protocol/ecdsa-sdk": 2.1.134
+    "@lit-protocol/misc": 2.1.134
+    "@lit-protocol/nacl": 2.1.134
+    "@lit-protocol/types": 2.1.134
+    "@lit-protocol/uint8arrays": 2.1.134
     ethers: ^5.7.1
     ipfs-http-client: 56.0.0
     jszip: ^3.10.1
     tslib: ^2.3.0
-  checksum: edf658a249ef4d6b183f69d57a337f925b87ccc83609274772bb63160fb92262fb35bee217ebc9af66b74a2e4b023adb88d16ad8bcc97b20d36eaf6735f7d820
+  checksum: 5c03547f474a19592747b9e8bb4b8aaabdebf2c6ba8e1e0be3447809cad2e1799d7b61acffcc0c2bf2e36c2e3808a0be79beca296cd4fdec3b37613a9958dfdc
   languageName: node
   linkType: hard
 
-"@lit-protocol/lit-node-client-nodejs@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/lit-node-client-nodejs@npm:2.1.120"
+"@lit-protocol/lit-node-client-nodejs@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/lit-node-client-nodejs@npm:2.1.134"
   dependencies:
-    "@lit-protocol/access-control-conditions": 2.1.120
-    "@lit-protocol/bls-sdk": 2.1.120
-    "@lit-protocol/constants": 2.1.120
-    "@lit-protocol/crypto": 2.1.120
-    "@lit-protocol/ecdsa-sdk": 2.1.120
-    "@lit-protocol/encryption": 2.1.120
-    "@lit-protocol/lit-third-party-libs": 2.1.120
-    "@lit-protocol/misc": 2.1.120
-    "@lit-protocol/misc-browser": 2.1.120
-    "@lit-protocol/nacl": 2.1.120
-    "@lit-protocol/types": 2.1.120
-    "@lit-protocol/uint8arrays": 2.1.120
+    "@lit-protocol/access-control-conditions": 2.1.134
+    "@lit-protocol/bls-sdk": 2.1.134
+    "@lit-protocol/constants": 2.1.134
+    "@lit-protocol/crypto": 2.1.134
+    "@lit-protocol/ecdsa-sdk": 2.1.134
+    "@lit-protocol/encryption": 2.1.134
+    "@lit-protocol/lit-third-party-libs": 2.1.134
+    "@lit-protocol/misc": 2.1.134
+    "@lit-protocol/misc-browser": 2.1.134
+    "@lit-protocol/nacl": 2.1.134
+    "@lit-protocol/types": 2.1.134
+    "@lit-protocol/uint8arrays": 2.1.134
     ethers: ^5.7.1
     ipfs-http-client: 56.0.0
     jszip: ^3.10.1
     lit-siwe: ^1.1.8
     node-fetch: ^2.6.1
     tslib: ^2.3.0
-  checksum: 11008a3db760ccf8f2c72b37ad9278328e99920aba9b0b227df8d8348d463c2054768dcfa3f426484622285d51a44fa437b11473f5c651fe8ff81c9b4d6d6a18
+  checksum: 6c1430622d5497a4d363b7d34284c6e71c6dddf7d0250618b6a430cd91c29edd327d97ee72779cd3182bdc71da85e9389b50c0ec2f766fc3ded7fbff113b8be4
   languageName: node
   linkType: hard
 
-"@lit-protocol/lit-node-client@npm:^2.1.118":
-  version: 2.1.120
-  resolution: "@lit-protocol/lit-node-client@npm:2.1.120"
+"@lit-protocol/lit-node-client@npm:^2.1.123":
+  version: 2.1.134
+  resolution: "@lit-protocol/lit-node-client@npm:2.1.134"
   dependencies:
-    "@lit-protocol/access-control-conditions": 2.1.120
-    "@lit-protocol/auth-browser": 2.1.120
-    "@lit-protocol/bls-sdk": 2.1.120
-    "@lit-protocol/constants": 2.1.120
-    "@lit-protocol/crypto": 2.1.120
-    "@lit-protocol/ecdsa-sdk": 2.1.120
-    "@lit-protocol/encryption": 2.1.120
-    "@lit-protocol/lit-node-client-nodejs": 2.1.120
-    "@lit-protocol/lit-third-party-libs": 2.1.120
-    "@lit-protocol/misc": 2.1.120
-    "@lit-protocol/misc-browser": 2.1.120
-    "@lit-protocol/nacl": 2.1.120
-    "@lit-protocol/types": 2.1.120
-    "@lit-protocol/uint8arrays": 2.1.120
-    "@walletconnect/ethereum-provider": 2.5.1
+    "@lit-protocol/access-control-conditions": 2.1.134
+    "@lit-protocol/auth-browser": 2.1.134
+    "@lit-protocol/bls-sdk": 2.1.134
+    "@lit-protocol/constants": 2.1.134
+    "@lit-protocol/crypto": 2.1.134
+    "@lit-protocol/ecdsa-sdk": 2.1.134
+    "@lit-protocol/encryption": 2.1.134
+    "@lit-protocol/lit-node-client-nodejs": 2.1.134
+    "@lit-protocol/lit-third-party-libs": 2.1.134
+    "@lit-protocol/misc": 2.1.134
+    "@lit-protocol/misc-browser": 2.1.134
+    "@lit-protocol/nacl": 2.1.134
+    "@lit-protocol/types": 2.1.134
+    "@lit-protocol/uint8arrays": 2.1.134
+    "@walletconnect/ethereum-provider": 2.7.0
     "@web3modal/standalone": ^2.2.1
     ethers: ^5.7.1
     ipfs-http-client: 56.0.0
@@ -1850,60 +1850,60 @@ __metadata:
     tslib: ^2.3.0
     tweetnacl: ^1.0.3
     tweetnacl-util: ^0.15.1
-  checksum: 449e81e29931ffe24a421c1a29fc1e264b292c7e1a6600fe9e8942f7cf9646d5c4126fa03a3539c924edd17b762b99eabec2873059a2f34c8c3d577f5f7054c9
+  checksum: 09c278a7116188da80938441ae3b2365a50df67a92906a1c73bb3e7b13800ebe6a5a267048ff9d8e976df9462a236cf8176beebcb7ebfec9f6591ff7012a20dd
   languageName: node
   linkType: hard
 
-"@lit-protocol/lit-third-party-libs@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/lit-third-party-libs@npm:2.1.120"
-  checksum: 7eeea021c194aa67b385e195ccaefb535b9933a608a9df0d392a691eaedbe51885a14ceff2c836bb607cf85ce362cb317d9f9ea1d423d6494234847419d347bf
+"@lit-protocol/lit-third-party-libs@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/lit-third-party-libs@npm:2.1.134"
+  checksum: 796120380680c58fb866ea3ae0c8731b30d3b7a3efd0b719ec7f46865230e7cc7e7fa70e14796ca41b5ed700d8c9ce07bce2cf0dfaf0671deae44d75ba5f7d44
   languageName: node
   linkType: hard
 
-"@lit-protocol/misc-browser@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/misc-browser@npm:2.1.120"
+"@lit-protocol/misc-browser@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/misc-browser@npm:2.1.134"
   dependencies:
-    "@lit-protocol/constants": 2.1.120
-    "@lit-protocol/misc": 2.1.120
-    "@lit-protocol/types": 2.1.120
-    "@lit-protocol/uint8arrays": 2.1.120
+    "@lit-protocol/constants": 2.1.134
+    "@lit-protocol/misc": 2.1.134
+    "@lit-protocol/types": 2.1.134
+    "@lit-protocol/uint8arrays": 2.1.134
     ethers: ^5.7.1
     tslib: ^2.3.0
-  checksum: da392f805c375192f597030153d2e08432609319694e0d9e9b8c0fd55aadb68ba52edf1fcd51d85da6db5c9a406c806f822c8caf5f7520828ae1993da370796f
+  checksum: c9cda2e4241dc925f3f65a4edf1a15615e50fcf981df728b64f34883e37d78e33d8ba68c6afe857181285e6844a19d155a8f98df2fe58b7195901a62940b5c6f
   languageName: node
   linkType: hard
 
-"@lit-protocol/misc@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/misc@npm:2.1.120"
+"@lit-protocol/misc@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/misc@npm:2.1.134"
   dependencies:
-    "@lit-protocol/constants": 2.1.120
-    "@lit-protocol/types": 2.1.120
+    "@lit-protocol/constants": 2.1.134
+    "@lit-protocol/types": 2.1.134
     tslib: ^2.3.0
-  checksum: a87ec5a557ce3e06769617d2af099caed9217b3a1b7a89752e9e36452f5533279bf7164b1ab5822075a3d89b317eedb5d88bf650aa900a50b35a222e507d8659
+  checksum: 3c9561024038d1101c471d03b2c4bed8d2a7d233483aefa4c544b59f1ae3e063c55522cd42d031f43ec5bb73a447eb6a3b00b108776387c48815043aa0cc297a
   languageName: node
   linkType: hard
 
-"@lit-protocol/nacl@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/nacl@npm:2.1.120"
-  checksum: 77ae9e7b80e7e81496d608019a9e76f603f1ac99eadb105621924b09fc1b4c8b4c864bbf18d6c44b5408ed11537a39fb57f2a9187a2ad38eb974e205d08a7f5a
+"@lit-protocol/nacl@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/nacl@npm:2.1.134"
+  checksum: e6d57a20df4e29b8ed33226a5d900358227d62ba856d18e9d32a262c8849567f460f6ef6f6a4b026df3ed9745ac356cc8855a0c7c6dfa4a0f1f784ee0c58dfd9
   languageName: node
   linkType: hard
 
-"@lit-protocol/types@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/types@npm:2.1.120"
-  checksum: bf845a6484c40fa51eeb7acd9eca764fabbdbd187c2a2ee213be26e9b8c33d64b37370ae50e2151748b3e8593109286be35c85e17a2ba30ecf8df38878f000e2
+"@lit-protocol/types@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/types@npm:2.1.134"
+  checksum: 787f998506d117f67de65f87ab73899c1a8c0904a98d61d768a30d03b8cd327c252ffe475b57a7fc8e1f08c90c19d797a5958580acde923b435fe12fdd5b4273
   languageName: node
   linkType: hard
 
-"@lit-protocol/uint8arrays@npm:2.1.120":
-  version: 2.1.120
-  resolution: "@lit-protocol/uint8arrays@npm:2.1.120"
-  checksum: 213af8f0f07286e5fd8236fe0bf254c877ba2a0f62a3ec1ff58548010e424aadc1e66fa43775d052518feba0be3006d2d6ebc75298d0e011d151a28a8400b172
+"@lit-protocol/uint8arrays@npm:2.1.134":
+  version: 2.1.134
+  resolution: "@lit-protocol/uint8arrays@npm:2.1.134"
+  checksum: f7d7a9ea983990d4ef2a0293990113962ef9b764dcf599eddb530febb8377c9cf53fb00f9fccd83b73572d062b1079dfb50f8d0ff7a103d138aa68e5348de1de
   languageName: node
   linkType: hard
 
@@ -3245,27 +3245,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/core@npm:2.5.1":
-  version: 2.5.1
-  resolution: "@walletconnect/core@npm:2.5.1"
+"@walletconnect/core@npm:2.7.0":
+  version: 2.7.0
+  resolution: "@walletconnect/core@npm:2.7.0"
   dependencies:
-    "@walletconnect/heartbeat": 1.2.0
-    "@walletconnect/jsonrpc-provider": 1.0.9
-    "@walletconnect/jsonrpc-utils": ^1.0.4
-    "@walletconnect/jsonrpc-ws-connection": 1.0.10
+    "@walletconnect/heartbeat": 1.2.1
+    "@walletconnect/jsonrpc-provider": ^1.0.12
+    "@walletconnect/jsonrpc-utils": ^1.0.7
+    "@walletconnect/jsonrpc-ws-connection": ^1.0.11
     "@walletconnect/keyvaluestorage": ^1.0.2
     "@walletconnect/logger": ^2.0.1
     "@walletconnect/relay-api": ^1.0.9
     "@walletconnect/relay-auth": ^1.0.4
-    "@walletconnect/safe-json": ^1.0.1
+    "@walletconnect/safe-json": ^1.0.2
     "@walletconnect/time": ^1.0.2
-    "@walletconnect/types": 2.5.1
-    "@walletconnect/utils": 2.5.1
+    "@walletconnect/types": 2.7.0
+    "@walletconnect/utils": 2.7.0
     events: ^3.3.0
     lodash.isequal: 4.5.0
-    pino: 7.11.0
     uint8arrays: ^3.1.0
-  checksum: 05d00f5bb0449ce44e07432c4030e779eede1c3c97edaa442002abc360c318cf25c27926a31bdf5a5f5e8b5b3facb11cc3dcb562be99096928cbe01b1e0df848
+  checksum: 86017de59ef2fd48638897878aad109cb43b2bf40ec4c172972389e6569eb3228fe662ae022e345f38432b890d0b39059cc5fda3f3607f8e9024b587b26a5d70
   languageName: node
   linkType: hard
 
@@ -3278,25 +3277,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/ethereum-provider@npm:2.5.1":
-  version: 2.5.1
-  resolution: "@walletconnect/ethereum-provider@npm:2.5.1"
+"@walletconnect/ethereum-provider@npm:2.7.0":
+  version: 2.7.0
+  resolution: "@walletconnect/ethereum-provider@npm:2.7.0"
   dependencies:
     "@walletconnect/jsonrpc-http-connection": ^1.0.4
-    "@walletconnect/jsonrpc-provider": ^1.0.6
+    "@walletconnect/jsonrpc-provider": ^1.0.11
     "@walletconnect/jsonrpc-types": ^1.0.2
-    "@walletconnect/jsonrpc-utils": ^1.0.4
-    "@walletconnect/sign-client": 2.5.1
-    "@walletconnect/types": 2.5.1
-    "@walletconnect/universal-provider": 2.5.1
-    "@walletconnect/utils": 2.5.1
+    "@walletconnect/jsonrpc-utils": ^1.0.7
+    "@walletconnect/sign-client": 2.7.0
+    "@walletconnect/types": 2.7.0
+    "@walletconnect/universal-provider": 2.7.0
+    "@walletconnect/utils": 2.7.0
     events: ^3.3.0
   peerDependencies:
     "@web3modal/standalone": ">=2"
   peerDependenciesMeta:
     "@web3modal/standalone":
       optional: true
-  checksum: 442d8613c4834c83b5d6fddd1cd061107aa74e9ad142cd74ab5e882ad2cd4c73bc4cc1a27166f879be2dd669613b61bb7320790b0fe6303395bdca487135b189
+  checksum: 4bfeec5d7dac54a1988b2882bacc4532902e5825c99b38abf6af24943261fafa0ac17263fb530e8e8490c058b7b75c0340812ff90db389ee3ec3de7900efae3f
   languageName: node
   linkType: hard
 
@@ -3310,17 +3309,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/heartbeat@npm:1.2.0":
-  version: 1.2.0
-  resolution: "@walletconnect/heartbeat@npm:1.2.0"
+"@walletconnect/heartbeat@npm:1.2.1":
+  version: 1.2.1
+  resolution: "@walletconnect/heartbeat@npm:1.2.1"
   dependencies:
     "@walletconnect/events": ^1.0.1
     "@walletconnect/time": ^1.0.2
-    chai: ^4.3.7
-    mocha: ^10.2.0
-    ts-node: ^10.9.1
     tslib: 1.14.1
-  checksum: 27a0efa0a9e3e073ae824dff4480b13ee878e09f949c0c18cb1cc344163ea501b3ef2602901e50062d5e7dba348632405de7f07a83313d2acce203a11a8b1a40
+  checksum: df4d492a2d336283f834bc205c09b795f85cd507a61b14745dc2124e510a250fefbd83d51216f93df2e0aa0cf8120134db2679de8019eddd63877e9928997952
   languageName: node
   linkType: hard
 
@@ -3336,25 +3332,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/jsonrpc-provider@npm:1.0.9":
-  version: 1.0.9
-  resolution: "@walletconnect/jsonrpc-provider@npm:1.0.9"
+"@walletconnect/jsonrpc-provider@npm:^1.0.11, @walletconnect/jsonrpc-provider@npm:^1.0.12":
+  version: 1.0.12
+  resolution: "@walletconnect/jsonrpc-provider@npm:1.0.12"
   dependencies:
-    "@walletconnect/jsonrpc-utils": ^1.0.6
-    "@walletconnect/safe-json": ^1.0.1
+    "@walletconnect/jsonrpc-utils": ^1.0.7
+    "@walletconnect/safe-json": ^1.0.2
     tslib: 1.14.1
-  checksum: 50e8a67606632a66b6b596d1f1304524d9f461a6741263dc67329986a93306c093da54724c30a88f1af2468e2d62d51821e5053765c68ad201a8c16176ca56da
-  languageName: node
-  linkType: hard
-
-"@walletconnect/jsonrpc-provider@npm:^1.0.6":
-  version: 1.0.10
-  resolution: "@walletconnect/jsonrpc-provider@npm:1.0.10"
-  dependencies:
-    "@walletconnect/jsonrpc-utils": ^1.0.6
-    "@walletconnect/safe-json": ^1.0.1
-    tslib: 1.14.1
-  checksum: 4bf0c4a3c2e2d36c9a11811682bd9727ee5696137a1be6b08870a1c1132236741ddb0f31b27619a63038adb76a2b733c4889777fc9c988f11e06839502d65d31
+  checksum: 399d664c864e5b54aeb4eef7c4107c47cafc0f7a8519cde97b652f65eb2b91913e81433bb3e043ccebc6628064646aee0590ae9703529c12b08a609a9460d24a
   languageName: node
   linkType: hard
 
@@ -3368,7 +3353,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/jsonrpc-utils@npm:^1.0.4, @walletconnect/jsonrpc-utils@npm:^1.0.6":
+"@walletconnect/jsonrpc-utils@npm:^1.0.6":
   version: 1.0.6
   resolution: "@walletconnect/jsonrpc-utils@npm:1.0.6"
   dependencies:
@@ -3379,16 +3364,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/jsonrpc-ws-connection@npm:1.0.10":
-  version: 1.0.10
-  resolution: "@walletconnect/jsonrpc-ws-connection@npm:1.0.10"
+"@walletconnect/jsonrpc-utils@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "@walletconnect/jsonrpc-utils@npm:1.0.7"
+  dependencies:
+    "@walletconnect/environment": ^1.0.1
+    "@walletconnect/jsonrpc-types": ^1.0.2
+    tslib: 1.14.1
+  checksum: dd78657293806b1de97147d564fb6b5bcb0d48ff3b7977a599990133443ed81d66df8163b12af8b374c5b1649e84eea746c2971836020095bf6709bf85627580
+  languageName: node
+  linkType: hard
+
+"@walletconnect/jsonrpc-ws-connection@npm:^1.0.11":
+  version: 1.0.11
+  resolution: "@walletconnect/jsonrpc-ws-connection@npm:1.0.11"
   dependencies:
     "@walletconnect/jsonrpc-utils": ^1.0.6
-    "@walletconnect/safe-json": ^1.0.1
+    "@walletconnect/safe-json": ^1.0.2
     events: ^3.3.0
     tslib: 1.14.1
     ws: ^7.5.1
-  checksum: 15d8d513596fcdb5a93445f1dd80937edc7f44634baf77a7d60e06fae0ea22cda1a65350f5f3e25bf18826b0d8c8cd821ac83ac545913436e577e6c2c61e1e22
+  checksum: 69fcc5ecb6eafd697fb88e22e6b7a2fd24d06129860feb6bcb5f702062233ebf5aef8b86a8502c67158f48370b98d0f5dffd930a0e5f6944752eb6a3c37a40cb
   languageName: node
   linkType: hard
 
@@ -3453,21 +3449,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/sign-client@npm:2.5.1":
-  version: 2.5.1
-  resolution: "@walletconnect/sign-client@npm:2.5.1"
+"@walletconnect/safe-json@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@walletconnect/safe-json@npm:1.0.2"
   dependencies:
-    "@walletconnect/core": 2.5.1
+    tslib: 1.14.1
+  checksum: fee03fcc70adb5635ab9419ea6ec6555aa2467bef650ad3b9526451c3a5cf247836db0f3ae3bb435d2e585d99e50c2ebe7dc9c429cfa3df900cf3fe4bd06d37f
+  languageName: node
+  linkType: hard
+
+"@walletconnect/sign-client@npm:2.7.0":
+  version: 2.7.0
+  resolution: "@walletconnect/sign-client@npm:2.7.0"
+  dependencies:
+    "@walletconnect/core": 2.7.0
     "@walletconnect/events": ^1.0.1
-    "@walletconnect/heartbeat": 1.2.0
-    "@walletconnect/jsonrpc-utils": ^1.0.4
+    "@walletconnect/heartbeat": 1.2.1
+    "@walletconnect/jsonrpc-utils": ^1.0.7
     "@walletconnect/logger": ^2.0.1
     "@walletconnect/time": ^1.0.2
-    "@walletconnect/types": 2.5.1
-    "@walletconnect/utils": 2.5.1
+    "@walletconnect/types": 2.7.0
+    "@walletconnect/utils": 2.7.0
     events: ^3.3.0
-    pino: 7.11.0
-  checksum: 4b9a38d9ede16cce592b0c145e3c7487a2e664ddaa9c330e8a8221fc06cc05e8171677ce832a31cf7f7fa78ba2457351e0e154e996000f962200a69039055ffb
+  checksum: 85f6ca56d481616202cedec6e9c8af39e21d7d1ad9c021d54a4831d6b9cf71d684a00049474f8368a09c75c4b9425006d73fbfd6d8ac99f3ec23038b01522564
   languageName: node
   linkType: hard
 
@@ -3480,59 +3484,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/types@npm:2.5.1":
-  version: 2.5.1
-  resolution: "@walletconnect/types@npm:2.5.1"
+"@walletconnect/types@npm:2.7.0":
+  version: 2.7.0
+  resolution: "@walletconnect/types@npm:2.7.0"
   dependencies:
     "@walletconnect/events": ^1.0.1
-    "@walletconnect/heartbeat": 1.2.0
+    "@walletconnect/heartbeat": 1.2.1
     "@walletconnect/jsonrpc-types": ^1.0.2
     "@walletconnect/keyvaluestorage": ^1.0.2
     "@walletconnect/logger": ^2.0.1
     events: ^3.3.0
-  checksum: 4e995d7ca12a19e9fde64b1c70226b299fb79eddbda5b32a21a4e1eafcd89ca08f8d0dcce7035bc8cee9afbd3aa071b498518be7038b3d74a1e62f697921308b
+  checksum: 3380e52fdcb481c8f4ce048b5d7eb7b8af0ac33d34afcca292022b1e443cbadba2235a0d9a489705515cfcb5f42ab3ee341f41c986e3ad23d28fb8472a31c51a
   languageName: node
   linkType: hard
 
-"@walletconnect/universal-provider@npm:2.5.1":
-  version: 2.5.1
-  resolution: "@walletconnect/universal-provider@npm:2.5.1"
+"@walletconnect/universal-provider@npm:2.7.0":
+  version: 2.7.0
+  resolution: "@walletconnect/universal-provider@npm:2.7.0"
   dependencies:
     "@walletconnect/jsonrpc-http-connection": ^1.0.4
-    "@walletconnect/jsonrpc-provider": ^1.0.6
+    "@walletconnect/jsonrpc-provider": ^1.0.11
     "@walletconnect/jsonrpc-types": ^1.0.2
-    "@walletconnect/jsonrpc-utils": ^1.0.4
+    "@walletconnect/jsonrpc-utils": ^1.0.7
     "@walletconnect/logger": ^2.0.1
-    "@walletconnect/sign-client": 2.5.1
-    "@walletconnect/types": 2.5.1
-    "@walletconnect/utils": 2.5.1
+    "@walletconnect/sign-client": 2.7.0
+    "@walletconnect/types": 2.7.0
+    "@walletconnect/utils": 2.7.0
     eip1193-provider: 1.0.1
     events: ^3.3.0
-    pino: 7.11.0
-  checksum: 449d72f4b83240da368cffe4edbe1edea04c03b8a102ee16aac092e26316186a4eb70c8042ac6ba13f7ef9601a30dd83e753fa3130df8fceb3f7c3e3606e4976
+  checksum: b6e4a51eb021c123eee5a8dcf2cb148e7797a849ce3298ed5599f6c0fcf9f7e9ba89b5f11442d6caf1d42b987f36b076f2fc740494d68ed5b07f0c6cddfbdf20
   languageName: node
   linkType: hard
 
-"@walletconnect/utils@npm:2.5.1":
-  version: 2.5.1
-  resolution: "@walletconnect/utils@npm:2.5.1"
+"@walletconnect/utils@npm:2.7.0":
+  version: 2.7.0
+  resolution: "@walletconnect/utils@npm:2.7.0"
   dependencies:
     "@stablelib/chacha20poly1305": 1.0.1
     "@stablelib/hkdf": 1.0.1
     "@stablelib/random": ^1.0.2
     "@stablelib/sha256": 1.0.1
     "@stablelib/x25519": ^1.0.3
-    "@walletconnect/jsonrpc-utils": ^1.0.4
+    "@walletconnect/jsonrpc-utils": ^1.0.7
     "@walletconnect/relay-api": ^1.0.9
-    "@walletconnect/safe-json": ^1.0.1
+    "@walletconnect/safe-json": ^1.0.2
     "@walletconnect/time": ^1.0.2
-    "@walletconnect/types": 2.5.1
+    "@walletconnect/types": 2.7.0
     "@walletconnect/window-getters": ^1.0.1
     "@walletconnect/window-metadata": ^1.0.1
     detect-browser: 5.3.0
     query-string: 7.1.1
     uint8arrays: ^3.1.0
-  checksum: ddd4d902e2c0ddae4e0e042d810043ce5f845f749321bcd70eb019a372ab55a5a941c582c76be9127e353514b05b5dad8ef003716dcf05cf6a4bba7cc21a3ce9
+  checksum: 10920058ab4a0455b0aab85fef162fef0d02eccf9e963731b922f1a72d80645ea8dca5b0ed3a1d2299b3c619d173f93078496762cc4324990a578047e1acc571
   languageName: node
   linkType: hard
 
@@ -8623,8 +8626,9 @@ eslint-config-turbo@latest:
   resolution: "lit-privacy-sdk@workspace:packages/lit-privacy-sdk"
   dependencies:
     "@gelatonetwork/relay-sdk": ^3.5.0
-    "@lit-protocol/lit-node-client": ^2.1.118
+    "@lit-protocol/lit-node-client": ^2.1.123
     ethers: ^5.4.7
+    jest: ^29.5.0
     siwe: ^1.1.6
     typescript: ^5.0.3
   languageName: unknown
@@ -9178,7 +9182,7 @@ eslint-config-turbo@latest:
   languageName: node
   linkType: hard
 
-"mocha@npm:^10.0.0, mocha@npm:^10.2.0":
+"mocha@npm:^10.0.0":
   version: 10.2.0
   resolution: "mocha@npm:10.2.0"
   dependencies:
@@ -11584,11 +11588,10 @@ prettier@latest:
   version: 0.0.0-use.local
   resolution: "ts@workspace:packages/lit-actions"
   dependencies:
-    "@lit-protocol/lit-node-client": ^2.1.118
+    "@lit-protocol/lit-node-client": ^2.1.123
     dotenv: ^16.0.3
     ethers: ^5.4.7
     jest: ^29.5.0
-    lit-privacy-sdk: "workspace:^"
     siwe: ^1.1.6
   languageName: unknown
   linkType: soft
