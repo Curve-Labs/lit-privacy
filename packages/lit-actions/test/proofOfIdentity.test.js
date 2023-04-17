@@ -34,6 +34,7 @@ describe("generateProofOfIdentity", () => {
 
   beforeAll(async () => {
     authSig = await generateAuthSig(signer, domain, origin, statement);
+    console.log({authSig});
     fingerprint.message = authSig.signedMessage;
     fingerprint.signature = authSig.sig;
     const proofOfIdentityOutput = await generateProofOfIdentity(
@@ -51,6 +52,7 @@ describe("generateProofOfIdentity", () => {
       convertBlockNumberToLeftPadHex(fingerprint.blockNumber),
       fingerprint.publicSignal,
     ]);
+    console.log({LitActionLogs: proofOfIdentityOutput.logs});
     console.log("dataSigned - identity", dataSigned);
     // encodedSig is the  main signature that we need to use
     signature = joinSignature({
@@ -58,6 +60,7 @@ describe("generateProofOfIdentity", () => {
       s: "0x" + proofOfIdentityOutput.signatures.sig1.s,
       v: proofOfIdentityOutput.signatures.sig1.recid,
     });
+    console.log("Identity proof:", signature);
   }, process.env.TEST_TIMEOUT_TIME);
 
   it("recovers public  key from returned signature", async () => {
